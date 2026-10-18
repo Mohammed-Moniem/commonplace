@@ -1,0 +1,214 @@
+{
+  "scope": "Bounded local Sheets behavior benchmark. Not full Google Sheets parity.",
+  "cases": [
+    {
+      "id": "S2-01",
+      "behavior": "named ranges calculate aggregates and reject unknown names",
+      "expectedResult": "SUM(Revenue)=600; missing range=#NAME?",
+      "testFile": "tests/sheets-v2.test.js",
+      "testName": "[S2-01] named ranges calculate aggregates and reject unknown names",
+      "sourceURL": "https://support.google.com/docs/answer/63175?hl=en-BW",
+      "baselineEvidence": "evidence/benchmark-v2/sheets-baseline-results.txt",
+      "baselineStatus": "FAIL",
+      "postStatus": "PASS"
+    },
+    {
+      "id": "S2-02",
+      "behavior": "DATE normalizes month overflow and YEAR MONTH DAY preserve leap day",
+      "expectedResult": "DATE(2024,13,1)=2025-01-01; leap-day components=2024,2,29",
+      "testFile": "tests/sheets-v2.test.js",
+      "testName": "[S2-02] DATE normalizes month overflow and YEAR MONTH DAY preserve leap day",
+      "sourceURL": "https://support.google.com/docs/table/25273?hl=en",
+      "baselineEvidence": "evidence/benchmark-v2/sheets-baseline-results.txt",
+      "baselineStatus": "FAIL",
+      "postStatus": "PASS"
+    },
+    {
+      "id": "S2-03",
+      "behavior": "EDATE clamps a month-end date and EOMONTH returns leap month end",
+      "expectedResult": "EDATE and EOMONTH both return serial 45351 (2024-02-29)",
+      "testFile": "tests/sheets-v2.test.js",
+      "testName": "[S2-03] EDATE clamps a month-end date and EOMONTH returns leap month end",
+      "sourceURL": "https://support.google.com/docs/table/25273?hl=en",
+      "baselineEvidence": "evidence/benchmark-v2/sheets-baseline-results.txt",
+      "baselineStatus": "FAIL",
+      "postStatus": "PASS"
+    },
+    {
+      "id": "S2-04",
+      "behavior": "DATEDIF counts complete months and rejects backwards intervals",
+      "expectedResult": "Complete months=1; backwards interval=#NUM!",
+      "testFile": "tests/sheets-v2.test.js",
+      "testName": "[S2-04] DATEDIF counts complete months and rejects backwards intervals",
+      "sourceURL": "https://support.google.com/docs/table/25273?hl=en",
+      "baselineEvidence": "evidence/benchmark-v2/sheets-baseline-results.txt",
+      "baselineStatus": "FAIL",
+      "postStatus": "PASS"
+    },
+    {
+      "id": "S2-05",
+      "behavior": "SUMIFS and COUNTIFS combine multiple criteria",
+      "expectedResult": "SUMIFS=400; COUNTIFS=1; unequal sizes=#VALUE!",
+      "testFile": "tests/sheets-v2.test.js",
+      "testName": "[S2-05] SUMIFS and COUNTIFS combine multiple criteria",
+      "sourceURL": "https://support.google.com/docs/table/25273?hl=en",
+      "baselineEvidence": "evidence/benchmark-v2/sheets-baseline-results.txt",
+      "baselineStatus": "FAIL",
+      "postStatus": "PASS"
+    },
+    {
+      "id": "S2-06",
+      "behavior": "XLOOKUP supports exact, nearest-smaller, reverse search and missing result",
+      "expectedResult": "Exact=100; reverse=300; nearest smaller=West; fallback=none",
+      "testFile": "tests/sheets-v2.test.js",
+      "testName": "[S2-06] XLOOKUP supports exact, nearest-smaller, reverse search and missing result",
+      "sourceURL": "https://support.google.com/docs/table/25273?hl=en",
+      "baselineEvidence": "evidence/benchmark-v2/sheets-baseline-results.txt",
+      "baselineStatus": "FAIL",
+      "postStatus": "PASS"
+    },
+    {
+      "id": "S2-07",
+      "behavior": "HLOOKUP supports exact horizontal search and rejects bad modes",
+      "expectedResult": "Horizontal exact=300; invalid mode=#VALUE!",
+      "testFile": "tests/sheets-v2.test.js",
+      "testName": "[S2-07] HLOOKUP supports exact horizontal search and rejects bad modes",
+      "sourceURL": "https://support.google.com/docs/table/25273?hl=en",
+      "baselineEvidence": "evidence/benchmark-v2/sheets-baseline-results.txt",
+      "baselineStatus": "FAIL",
+      "postStatus": "PASS"
+    },
+    {
+      "id": "S2-08",
+      "behavior": "TEXT formats dates and currency; REPLACE uses one-based offsets",
+      "expectedResult": "Date=2024-02-29; currency=$1,234.50; replace=aXef",
+      "testFile": "tests/sheets-v2.test.js",
+      "testName": "[S2-08] TEXT formats dates and currency; REPLACE uses one-based offsets",
+      "sourceURL": "https://support.google.com/docs/table/25273?hl=en",
+      "baselineEvidence": "evidence/benchmark-v2/sheets-baseline-results.txt",
+      "baselineStatus": "FAIL",
+      "postStatus": "PASS"
+    },
+    {
+      "id": "S2-09",
+      "behavior": "SPLIT returns a two-dimensional row with delimiter options",
+      "expectedResult": "Array row=[a,b,empty,c]",
+      "testFile": "tests/sheets-v2.test.js",
+      "testName": "[S2-09] SPLIT returns a two-dimensional row with delimiter options",
+      "sourceURL": "https://support.google.com/docs/table/25273?hl=en",
+      "baselineEvidence": "evidence/benchmark-v2/sheets-baseline-results.txt",
+      "baselineStatus": "FAIL",
+      "postStatus": "PASS"
+    },
+    {
+      "id": "S2-10",
+      "behavior": "SEQUENCE spills values into the real grid and downstream ranges calculate",
+      "expectedResult": "2x2 spill=5,7,9,11; downstream SUM=32",
+      "testFile": "tests/sheets-v2.test.js",
+      "testName": "[S2-10] SEQUENCE spills values into the real grid and downstream ranges calculate",
+      "sourceURL": "https://support.google.com/docs/table/25273?hl=en",
+      "baselineEvidence": "evidence/benchmark-v2/sheets-baseline-results.txt",
+      "baselineStatus": "FAIL",
+      "postStatus": "PASS"
+    },
+    {
+      "id": "S2-11",
+      "behavior": "blocked array spills report REF without overwriting occupied cells",
+      "expectedResult": "#REF! at blocked anchor; occupied Keep survives; no partial spill",
+      "testFile": "tests/sheets-v2.test.js",
+      "testName": "[S2-11] blocked array spills report REF without overwriting occupied cells",
+      "sourceURL": "https://support.google.com/docs/table/25273?hl=en",
+      "baselineEvidence": "evidence/benchmark-v2/sheets-baseline-results.txt",
+      "baselineStatus": "FAIL",
+      "postStatus": "PASS"
+    },
+    {
+      "id": "S2-12",
+      "behavior": "TRANSPOSE and UNIQUE return actual array values",
+      "expectedResult": "Transpose=[100,200,300]; UNIQUE=[East],[West]",
+      "testFile": "tests/sheets-v2.test.js",
+      "testName": "[S2-12] TRANSPOSE and UNIQUE return actual array values",
+      "sourceURL": "https://support.google.com/docs/table/25273?hl=en",
+      "baselineEvidence": "evidence/benchmark-v2/sheets-baseline-results.txt",
+      "baselineStatus": "FAIL",
+      "postStatus": "PASS"
+    },
+    {
+      "id": "S2-13",
+      "behavior": "merge and unmerge preserve hidden underlying cell contents",
+      "expectedResult": "Merge metadata=A1:B1; B1 remains100; unmerge restores; overlap rejects",
+      "testFile": "tests/sheets-v2.test.js",
+      "testName": "[S2-13] merge and unmerge preserve hidden underlying cell contents",
+      "sourceURL": "https://support.google.com/docs/answer/46973?hl=en",
+      "baselineEvidence": "evidence/benchmark-v2/sheets-baseline-results.txt",
+      "baselineStatus": "FAIL",
+      "postStatus": "PASS"
+    },
+    {
+      "id": "S2-14",
+      "behavior": "fill series infers numeric step and shifts relative formula references",
+      "expectedResult": "A4=11 from2,5; copied B4 formula=A4*2",
+      "testFile": "tests/sheets-v2.test.js",
+      "testName": "[S2-14] fill series infers numeric step and shifts relative formula references",
+      "sourceURL": "https://support.google.com/docs/answer/75509?hl=en",
+      "baselineEvidence": "evidence/benchmark-v2/sheets-baseline-results.txt",
+      "baselineStatus": "FAIL",
+      "postStatus": "PASS"
+    },
+    {
+      "id": "S2-15",
+      "behavior": "fill series increments text suffixes and respects strict validation",
+      "expectedResult": "Task7 extends toTask9; strict dropdown rejects fill",
+      "testFile": "tests/sheets-v2.test.js",
+      "testName": "[S2-15] fill series increments text suffixes and respects strict validation",
+      "sourceURL": "https://support.google.com/docs/answer/75509?hl=en",
+      "baselineEvidence": "evidence/benchmark-v2/sheets-baseline-results.txt",
+      "baselineStatus": "FAIL",
+      "postStatus": "PASS"
+    },
+    {
+      "id": "S2-16",
+      "behavior": "protected ranges and sheets block fill without modifying source",
+      "expectedResult": "Protected A2 true/B2 false; fill rejects without mutation; whole-sheet protection applies",
+      "testFile": "tests/sheets-v2.test.js",
+      "testName": "[S2-16] protected ranges and sheets block fill without modifying source",
+      "sourceURL": "https://support.google.com/docs/answer/1218656?hl=en",
+      "baselineEvidence": "evidence/benchmark-v2/sheets-baseline-results.txt",
+      "baselineStatus": "FAIL",
+      "postStatus": "PASS"
+    },
+    {
+      "id": "S2-17",
+      "behavior": "XLSX standard OOXML contains merges named ranges validation and conditional formatting",
+      "expectedResult": "Native OOXML merges/definedName/list validation/cfRule; reimport SUM(Revenue)=600",
+      "testFile": "tests/sheets-v2.test.js",
+      "testName": "[S2-17] XLSX standard OOXML contains merges named ranges validation and conditional formatting",
+      "sourceURL": "https://support.google.com/docs/answer/46973?hl=en",
+      "baselineEvidence": "evidence/benchmark-v2/sheets-baseline-results.txt",
+      "baselineStatus": "FAIL",
+      "postStatus": "PASS"
+    },
+    {
+      "id": "S2-18",
+      "behavior": "XLSX preserves borders wrap font sizing hidden rows freeze and local chart metadata",
+      "expectedResult": "Font18, wrap, bottom border #112233, hidden rows/cols, height60, frozenCol1 and pie chart survive",
+      "testFile": "tests/sheets-v2.test.js",
+      "testName": "[S2-18] XLSX preserves borders wrap font sizing hidden rows freeze and local chart metadata",
+      "sourceURL": "https://support.google.com/docs/answer/46973?hl=en",
+      "baselineEvidence": "evidence/benchmark-v2/sheets-baseline-results.txt",
+      "baselineStatus": "FAIL",
+      "postStatus": "PASS"
+    },
+    {
+      "id": "S2-19",
+      "behavior": "Pivot groups multiple fields and splits columns",
+      "expectedResult": "3 groups; East/A Q1=10,Q2=20,total30; grand Q1=17,Q2=25,total42.",
+      "testFile": "tests/sheets-v2.test.js",
+      "testName": "[S2-19] pivot groups multiple fields and splits columns with correct totals",
+      "sourceURL": "https://support.google.com/docs/answer/1272900?hl=en",
+      "baselineEvidence": "evidence/benchmark-v2/sheets-baseline-results.txt",
+      "baselineStatus": "FAIL",
+      "postStatus": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,645 @@
+{
+  "status": "LOCAL_CONTRACTS_VERIFIED",
+  "basis": "Verified missing from the0.3 source. Priority score=impact/effort; both are engineering estimates on a1–5 scale. Dependencies may require foundation work first. Existing features do not count.",
+  "apps": [
+    {
+      "app": "docs",
+      "features": [
+        {
+          "id": "D4-01",
+          "rank": 1,
+          "name": "Duplicate tabs",
+          "impact": 5,
+          "effort": 1,
+          "acceptance": "Copy body/page settings to a fresh id; later edits independent.",
+          "score": 5,
+          "priority": 1
+        },
+        {
+          "id": "D4-05",
+          "rank": 5,
+          "name": "Replace images",
+          "impact": 5,
+          "effort": 1,
+          "acceptance": "Replace source while retaining display width and wrapping.",
+          "score": 5,
+          "priority": 2
+        },
+        {
+          "id": "D4-18",
+          "rank": 18,
+          "name": "RTL paragraphs",
+          "impact": 5,
+          "effort": 1,
+          "acceptance": "Apply LTR/RTL independently of paragraph alignment.",
+          "score": 5,
+          "priority": 3
+        },
+        {
+          "id": "D4-04",
+          "rank": 4,
+          "name": "Rotate images",
+          "impact": 4,
+          "effort": 1,
+          "acceptance": "Rotate pixels 90 degrees and persist new image/dimensions.",
+          "score": 4,
+          "priority": 4
+        },
+        {
+          "id": "D4-12",
+          "rank": 12,
+          "name": "Change text case",
+          "impact": 4,
+          "effort": 1,
+          "acceptance": "Upper/lower/title/sentence case only selected text, preserving marks.",
+          "score": 4,
+          "priority": 5
+        },
+        {
+          "id": "D4-14",
+          "rank": 14,
+          "name": "Whole-word search",
+          "impact": 4,
+          "effort": 1,
+          "acceptance": "Exclude partial words while retaining case setting.",
+          "score": 4,
+          "priority": 6
+        },
+        {
+          "id": "D4-16",
+          "rank": 16,
+          "name": "Paragraph borders/shading",
+          "impact": 4,
+          "effort": 1,
+          "acceptance": "Apply/clear border and background across selected paragraphs; HTML reload retains.",
+          "score": 4,
+          "priority": 7
+        },
+        {
+          "id": "D4-17",
+          "rank": 17,
+          "name": "Paragraph spacing",
+          "impact": 4,
+          "effort": 1,
+          "acceptance": "Independent before/after spacing persists through reload/export.",
+          "score": 4,
+          "priority": 8
+        },
+        {
+          "id": "D4-19",
+          "rank": 19,
+          "name": "Special characters",
+          "impact": 3,
+          "effort": 1,
+          "acceptance": "Insert chosen symbol at saved editor selection.",
+          "score": 3,
+          "priority": 9
+        },
+        {
+          "id": "D4-03",
+          "rank": 3,
+          "name": "Crop images",
+          "impact": 5,
+          "effort": 2,
+          "acceptance": "Apply user crop bounds to actual pixels so reload/export retain crop.",
+          "score": 2.5,
+          "priority": 10
+        },
+        {
+          "id": "D4-09",
+          "rank": 9,
+          "name": "Format painter",
+          "impact": 5,
+          "effort": 2,
+          "acceptance": "Capture marks/paragraph formatting and apply to another selection without changing words.",
+          "score": 2.5,
+          "priority": 11
+        },
+        {
+          "id": "D4-13",
+          "rank": 13,
+          "name": "Search all tabs",
+          "impact": 5,
+          "effort": 2,
+          "acceptance": "Results navigate to exact text in correct tab.",
+          "score": 2.5,
+          "priority": 12
+        },
+        {
+          "id": "D4-02",
+          "rank": 2,
+          "name": "Nested tabs",
+          "impact": 4,
+          "effort": 2,
+          "acceptance": "Indent/outdent through three levels; preserve subtrees and promote children on delete.",
+          "score": 2,
+          "priority": 13
+        },
+        {
+          "id": "D4-06",
+          "rank": 6,
+          "name": "Citation library",
+          "impact": 4,
+          "effort": 2,
+          "acceptance": "Add/edit/remove local source metadata and insert citations; edits refresh references.",
+          "score": 2,
+          "priority": 14
+        },
+        {
+          "id": "D4-07",
+          "rank": 7,
+          "name": "Automatic bibliography",
+          "impact": 4,
+          "effort": 2,
+          "acceptance": "Bibliography refreshes cited sources and supports APA/MLA/Chicago display.",
+          "score": 2,
+          "priority": 15
+        },
+        {
+          "id": "D4-08",
+          "rank": 8,
+          "name": "Bookmarks and internal links",
+          "impact": 4,
+          "effort": 2,
+          "acceptance": "Name position, link/navigate to it, remove marker separately.",
+          "score": 2,
+          "priority": 16
+        },
+        {
+          "id": "D4-11",
+          "rank": 11,
+          "name": "Column sections",
+          "impact": 4,
+          "effort": 2,
+          "acceptance": "Wrap selected blocks in 2/3 columns; unwrap without losing contents.",
+          "score": 2,
+          "priority": 17
+        },
+        {
+          "id": "D4-15",
+          "rank": 15,
+          "name": "Regex find/replace",
+          "impact": 4,
+          "effort": 2,
+          "acceptance": "Validate patterns, ignore zero-length matches safely, support numbered replacement groups.",
+          "score": 2,
+          "priority": 18
+        },
+        {
+          "id": "D4-20",
+          "rank": 20,
+          "name": "Sort paragraphs",
+          "impact": 3,
+          "effort": 2,
+          "acceptance": "Sort complete selected paragraphs both directions, preserving marks; reject mixed structures.",
+          "score": 1.5,
+          "priority": 19
+        },
+        {
+          "id": "D4-10",
+          "rank": 10,
+          "name": "Rendered equations",
+          "impact": 4,
+          "effort": 3,
+          "acceptance": "Editable bounded fractions/roots/powers/subscripts/Greek render as MathML; unsupported syntax errors.",
+          "score": 1.33,
+          "priority": 20
+        }
+      ]
+    },
+    {
+      "app": "sheets",
+      "features": [
+        {
+          "id": "S4-10",
+          "rank": 10,
+          "name": "Trim whitespace cleanup",
+          "impact": 4,
+          "effort": 1,
+          "acceptance": "Trim and collapse whitespace in selected literal text without rewriting formulas.",
+          "score": 4,
+          "priority": 1
+        },
+        {
+          "id": "S4-11",
+          "rank": 11,
+          "name": "Format painter",
+          "impact": 4,
+          "effort": 1,
+          "acceptance": "Capture one cell style and paint another selection in one action without changing values.",
+          "score": 4,
+          "priority": 2
+        },
+        {
+          "id": "S4-13",
+          "rank": 13,
+          "name": "Alternating row colors",
+          "impact": 4,
+          "effort": 1,
+          "acceptance": "Apply a header color and alternating body fills over a selected table, preserving values.",
+          "score": 4,
+          "priority": 3
+        },
+        {
+          "id": "S4-14",
+          "rank": 14,
+          "name": "Cell notes",
+          "impact": 4,
+          "effort": 1,
+          "acceptance": "Save, inspect and remove a cell note with visible grid indicator.",
+          "score": 4,
+          "priority": 4
+        },
+        {
+          "id": "S4-18",
+          "rank": 18,
+          "name": "Freeze through selection",
+          "impact": 4,
+          "effort": 1,
+          "acceptance": "Freeze multiple rows and columns through the selected cell and retain their offsets on scroll.",
+          "score": 4,
+          "priority": 5
+        },
+        {
+          "id": "S4-17",
+          "rank": 17,
+          "name": "Text case cleanup",
+          "impact": 3,
+          "effort": 1,
+          "acceptance": "Convert literal text to upper/lower/title case while preserving formulas, numbers and formatting.",
+          "score": 3,
+          "priority": 6
+        },
+        {
+          "id": "S4-19",
+          "rank": 19,
+          "name": "Sheet tab colors",
+          "impact": 3,
+          "effort": 1,
+          "acceptance": "Choose a saved worksheet tab color that remains visible after switching sheets.",
+          "score": 3,
+          "priority": 7
+        },
+        {
+          "id": "S4-01",
+          "rank": 1,
+          "name": "Per-column filters",
+          "impact": 5,
+          "effort": 2,
+          "acceptance": "Combine independent column criteria with AND while keeping the header visible.",
+          "score": 2.5,
+          "priority": 8
+        },
+        {
+          "id": "S4-02",
+          "rank": 2,
+          "name": "Saved filter views",
+          "impact": 5,
+          "effort": 2,
+          "acceptance": "Save, restore and delete named column-filter configurations after reopening JSON.",
+          "score": 2.5,
+          "priority": 9
+        },
+        {
+          "id": "S4-03",
+          "rank": 3,
+          "name": "Multi-column sort",
+          "impact": 5,
+          "effort": 2,
+          "acceptance": "Sort selected table by ordered ascending/descending keys without separating row cells.",
+          "score": 2.5,
+          "priority": 10
+        },
+        {
+          "id": "S4-04",
+          "rank": 4,
+          "name": "Checkbox cells",
+          "impact": 5,
+          "effort": 2,
+          "acceptance": "Insert toggleable checkbox cells whose TRUE/FALSE values feed formulas and persist.",
+          "score": 2.5,
+          "priority": 11
+        },
+        {
+          "id": "S4-05",
+          "rank": 5,
+          "name": "Find and replace",
+          "impact": 5,
+          "effort": 2,
+          "acceptance": "Replace matches in selection, sheet or workbook with case/whole-cell options and formula opt-in.",
+          "score": 2.5,
+          "priority": 12
+        },
+        {
+          "id": "S4-08",
+          "rank": 8,
+          "name": "Remove duplicate rows",
+          "impact": 4,
+          "effort": 2,
+          "acceptance": "Choose key columns and header handling; compact unique rows while preserving complete cell objects.",
+          "score": 2,
+          "priority": 13
+        },
+        {
+          "id": "S4-09",
+          "rank": 9,
+          "name": "Split text into columns",
+          "impact": 4,
+          "effort": 2,
+          "acceptance": "Split a selected text column by delimiter with quoted-field handling and safe destination checks.",
+          "score": 2,
+          "priority": 14
+        },
+        {
+          "id": "S4-15",
+          "rank": 15,
+          "name": "Cell hyperlinks",
+          "impact": 4,
+          "effort": 2,
+          "acceptance": "Attach and safely open an HTTP/HTTPS/mailto link without losing the cell value.",
+          "score": 2,
+          "priority": 15
+        },
+        {
+          "id": "S4-16",
+          "rank": 16,
+          "name": "Paste transposed cells",
+          "impact": 4,
+          "effort": 2,
+          "acceptance": "Paste a copied rectangle with rows/columns swapped and formula-relative references adjusted.",
+          "score": 2,
+          "priority": 16
+        },
+        {
+          "id": "S4-06",
+          "rank": 6,
+          "name": "Custom-formula conditional formatting",
+          "impact": 5,
+          "effort": 3,
+          "acceptance": "A relative formula evaluates per target cell, including cross-column conditions.",
+          "score": 1.67,
+          "priority": 17
+        },
+        {
+          "id": "S4-07",
+          "rank": 7,
+          "name": "Custom-formula data validation",
+          "impact": 5,
+          "effort": 3,
+          "acceptance": "Reject a proposed edit when its relative custom formula is false or errors, without changing saved cells.",
+          "score": 1.67,
+          "priority": 18
+        },
+        {
+          "id": "S4-20",
+          "rank": 20,
+          "name": "Fill business days",
+          "impact": 3,
+          "effort": 2,
+          "acceptance": "Fill dates forward while skipping Saturday/Sunday and preserving the first selected date.",
+          "score": 1.5,
+          "priority": 19
+        },
+        {
+          "id": "S4-12",
+          "rank": 12,
+          "name": "Formula-safe cut",
+          "impact": 5,
+          "effort": 4,
+          "acceptance": "Move cells and retarget dependent scalar and fully-contained range references across sheets, preserving anchors and literals; reject unsupported partial-range moves atomically.",
+          "score": 1.25,
+          "priority": 20
+        }
+      ]
+    },
+    {
+      "app": "slides",
+      "features": [
+        {
+          "id": "L4-06",
+          "rank": 6,
+          "name": "Replace image in place",
+          "impact": 5,
+          "effort": 1,
+          "absentEvidence": "Image upload always inserts a new object.",
+          "acceptance": "Replace a selected local image while retaining its id, position, size, rotation, mask, crop, appearance and group.",
+          "score": 5,
+          "priority": 1
+        },
+        {
+          "id": "L4-11",
+          "rank": 11,
+          "name": "Lock objects",
+          "impact": 4,
+          "effort": 1,
+          "absentEvidence": "All objects remain draggable/deletable.",
+          "acceptance": "Lock selected objects against drag, resize, keyboard movement and delete; unlock through object list/format controls; lock persists.",
+          "score": 4,
+          "priority": 2
+        },
+        {
+          "id": "L4-15",
+          "rank": 15,
+          "name": "Skip hidden slides",
+          "impact": 4,
+          "effort": 1,
+          "absentEvidence": "Presentation nextFrame visits every slide.",
+          "acceptance": "Hide/unhide slides in filmstrip; editing retains them and live/HTML presentation skips them forward/back; no empty-deck dead end.",
+          "score": 4,
+          "priority": 3
+        },
+        {
+          "id": "L4-17",
+          "rank": 17,
+          "name": "Equal object distribution",
+          "impact": 4,
+          "effort": 1,
+          "absentEvidence": "Existing align controls only move the selection bounding box to slide edges/center.",
+          "acceptance": "Distribute three or more unlocked selected objects horizontally/vertically with equal gaps, preserving endpoints, content and unselected geometry.",
+          "score": 4,
+          "priority": 4
+        },
+        {
+          "id": "L4-01",
+          "rank": 1,
+          "name": "Cross-slide object clipboard",
+          "impact": 5,
+          "effort": 2,
+          "absentEvidence": "SlidesEditor duplicateObjects appends only to current slide; no copy/cut/paste handler.",
+          "acceptance": "Copy/cut selected objects, switch slides and paste preserving styles, groups and connector membership; cut clears only after a valid paste and stale sources reject.",
+          "score": 2.5,
+          "priority": 5
+        },
+        {
+          "id": "L4-08",
+          "rank": 8,
+          "name": "Format painter",
+          "impact": 5,
+          "effort": 2,
+          "absentEvidence": "No style capture/apply action exists.",
+          "acceptance": "Capture an object's appearance and paint another compatible object or selection without copying content or geometry; undo restores the target.",
+          "score": 2.5,
+          "priority": 6
+        },
+        {
+          "id": "L4-04",
+          "rank": 4,
+          "name": "Paragraph layout controls",
+          "impact": 4,
+          "effort": 2,
+          "absentEvidence": "Text has fixed line-height1.25 and padding; no paragraph spacing/vertical alignment controls.",
+          "acceptance": "Change line spacing, space before/after and vertical text alignment while retaining text and inline styles; presentation/export geometry follows.",
+          "score": 2,
+          "priority": 7
+        },
+        {
+          "id": "L4-07",
+          "rank": 7,
+          "name": "Image masks",
+          "impact": 4,
+          "effort": 2,
+          "absentEvidence": "Image renderer has no clipping mask.",
+          "acceptance": "Apply ellipse/rounded/rectangle masks to images, retain crop and show the mask in presentation/SVG/HTML/PPTX.",
+          "score": 2,
+          "priority": 8
+        },
+        {
+          "id": "L4-12",
+          "rank": 12,
+          "name": "Object and slide hyperlinks",
+          "impact": 4,
+          "effort": 2,
+          "absentEvidence": "No hyperlink fields, controls or presentation click targets.",
+          "acceptance": "Attach safe website/mail links or an internal slide target; activating during presentation opens the link or jumps to the slide without advancing accidentally; unsafe protocols reject.",
+          "score": 2,
+          "priority": 9
+        },
+        {
+          "id": "L4-13",
+          "rank": 13,
+          "name": "Deck find and replace",
+          "impact": 4,
+          "effort": 2,
+          "absentEvidence": "No text search/replace UI or helper.",
+          "acceptance": "Find text across slides, jump to matches and replace one/all while preserving unrelated rich text; notes optionally included; undo restores edits.",
+          "score": 2,
+          "priority": 10
+        },
+        {
+          "id": "L4-14",
+          "rank": 14,
+          "name": "Automatic footer and slide numbers",
+          "impact": 4,
+          "effort": 2,
+          "absentEvidence": "No footer/number data or generated stage content.",
+          "acceptance": "Set a deck footer, number start and visibility; all slides derive correct numbers through reorder and show them in presentation/exports.",
+          "score": 2,
+          "priority": 11
+        },
+        {
+          "id": "L4-18",
+          "rank": 18,
+          "name": "PNG slide export",
+          "impact": 4,
+          "effort": 2,
+          "absentEvidence": "Only SVG, HTML, JSON, PDF print and PPTX exports exist.",
+          "acceptance": "Download the current slide as a real PNG at selectable1x/2x resolution with current rich text/crop/footer/background; decode failure is surfaced.",
+          "score": 2,
+          "priority": 12
+        },
+        {
+          "id": "L4-19",
+          "rank": 19,
+          "name": "Append slides from a local deck",
+          "impact": 4,
+          "effort": 2,
+          "absentEvidence": "Existing import replaces the whole presentation.",
+          "acceptance": "Append JSON/PPTX slides to the current deck without replacing existing authored slides; remap object/group/slide/link identifiers and scale aspect ratios.",
+          "score": 2,
+          "priority": 13
+        },
+        {
+          "id": "L4-20",
+          "rank": 20,
+          "name": "Photo slide backgrounds",
+          "impact": 4,
+          "effort": 2,
+          "absentEvidence": "slide.background is color-only.",
+          "acceptance": "Choose a local background image, cover/contain and opacity; replace/remove it while objects remain; presentation and exports include it.",
+          "score": 2,
+          "priority": 14
+        },
+        {
+          "id": "L4-03",
+          "rank": 3,
+          "name": "Structured bulleted and numbered lists",
+          "impact": 5,
+          "effort": 3,
+          "absentEvidence": "No paragraph/list data or bullet controls exist.",
+          "acceptance": "Toggle real bullets/numbering and indent/outdent selected paragraphs; nesting and numbering render in presentation and exports.",
+          "score": 1.67,
+          "priority": 15
+        },
+        {
+          "id": "L4-05",
+          "rank": 5,
+          "name": "Nondestructive image crop",
+          "impact": 5,
+          "effort": 3,
+          "absentEvidence": "Images always objectFit contain; no crop metadata or viewport.",
+          "acceptance": "Crop using a normalized visible rectangle and reposition it, reset without changing original source; editor/presentation/exports show the same crop.",
+          "score": 1.67,
+          "priority": 16
+        },
+        {
+          "id": "L4-16",
+          "rank": 16,
+          "name": "Named slide sections",
+          "impact": 3,
+          "effort": 2,
+          "absentEvidence": "Filmstrip is one flat list.",
+          "acceptance": "Assign section names, show section headings and collapse/expand sections without changing slide content or order.",
+          "score": 1.5,
+          "priority": 17
+        },
+        {
+          "id": "L4-09",
+          "rank": 9,
+          "name": "Smart snapping guides",
+          "impact": 4,
+          "effort": 3,
+          "absentEvidence": "Pointer move simply rounds dx/dy; no guide matching.",
+          "acceptance": "Moving a selection near slide/object edges or centers snaps within a tolerance and displays guides; toggle disables snapping.",
+          "score": 1.33,
+          "priority": 18
+        },
+        {
+          "id": "L4-10",
+          "rank": 10,
+          "name": "Attached connectors",
+          "impact": 4,
+          "effort": 3,
+          "absentEvidence": "Only detached line/arrow shapes exist.",
+          "acceptance": "Connect two objects with an arrow that follows their move/resize; duplicate/paste remaps endpoints and deletion handles missing endpoints safely.",
+          "score": 1.33,
+          "priority": 19
+        },
+        {
+          "id": "L4-02",
+          "rank": 2,
+          "name": "Per-word rich text",
+          "impact": 5,
+          "effort": 4,
+          "absentEvidence": "RenderObject uses one e.text string and one style; editing is a textarea.",
+          "acceptance": "Select a word, apply bold/italic/underline/color/font/size without changing neighboring words; content persists and appears in HTML/SVG/PPTX.",
+          "score": 1.25,
+          "priority": 20
+        }
+      ]
+    }
+  ],
+  "sharedExtras": [
+    "Save and reuse local templates",
+    "Embed local Sheets ranges/charts in Docs and Slides; explicit source refresh"
+  ]
+}

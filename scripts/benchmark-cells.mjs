@@ -1,0 +1,22 @@
+import {spawnSync} from 'node:child_process';
+import {mkdirSync,writeFileSync} from 'node:fs';
+import {pathToFileURL} from 'node:url';
+import path from 'node:path';
+import {artifact,sourceManifest} from './source-manifest.mjs';
+
+const directory='evidence/cells-v3';mkdirSync(directory,{recursive:true});
+const manifest=sourceManifest(),filename=directory+'/results.json';
+writeFileSync(filename,JSON.stringify({valid:false,status:'RUNNING',sourceDigest:manifest.sourceDigest}));
+const result=spawnSync(process.execPath,['--test','--test-reporter='+pathToFileURL(path.resolve('scripts/benchmark-reporter.mjs')).href,'tests/cellValues.test.js','tests/cellActions.test.js','tests/formulaSuggestions.test.js','tests/sheetsFormatInterop.test.js','tests/cellClipboard.test.js'],{encoding:'utf8',maxBuffer:10_000_000});
+writeFileSync(directory+'/events.jsonl',result.stdout??'');writeFileSync(directory+'/stderr.txt',result.stderr??'');
+const events=(result.stdout??'').split('\n').filter(Boolean).map(line=>JSON.parse(line));
+const cases=events.filter(row=>['test:pass','test:fail'].includes(row.type)).map(row=>({id:row.name.match(/^\[([^\]]+)\]/)?.[1],name:row.name,status:row.skip?'SKIP':row.todo?'TODO':row.type==='test:pass'?'PASS':'FAIL'}));
+const ids=(prefix,start,count)=>Array.from({length:count},(_,i)=>`${prefix}-${String(start+i).padStart(2,'0')}`);
+const expected=[...ids('C3',1,14),...ids('C3',21,6),...ids('A3',1,22),...ids('C3',50,8),...ids('C3',60,6)].sort();
+const counts=events.filter(row=>row.type==='test:summary').at(-1)?.counts;
+const errors=[];
+if(result.status!==0||!counts||counts.passed!==56||counts.tests!==56||counts.failed||counts.cancelled||counts.skipped||counts.todo)errors.push('All56 daily-cell contracts must execute and pass without skips.');
+if(JSON.stringify(cases.map(row=>row.id).sort())!==JSON.stringify(expected)||cases.some(row=>row.status!=='PASS'))errors.push('Contract IDs or outcomes differ from the declared56 cases.');
+if(sourceManifest().sourceDigest!==manifest.sourceDigest)errors.push('Source changed during the run.');
+const report={valid:!errors.length,status:errors.length?'FAIL':'PASS',checkedAt:new Date().toISOString(),scope:'Local daily spreadsheet cell contracts; browser journeys are separate observations. No full Excel or Google parity claim.',sourceDigest:manifest.sourceDigest,counts,cases,errors,evidence:[artifact(directory+'/events.jsonl'),artifact(directory+'/stderr.txt')]};
+writeFileSync(filename,JSON.stringify(report,null,2));console.log(JSON.stringify({status:report.status,sourceDigest:report.sourceDigest,counts,errors}));if(errors.length)process.exitCode=1;

@@ -1,0 +1,26 @@
+{
+  "scope": "Twenty additional local Sheets workflows; no claim of complete Excel or Google parity.",
+  "baselineObservation": "Inspected SheetsEditor.jsx, sheetOperations.js, cellActions.js and formulas.js before edits. Existing filter is one whole-row text query; sort is one column; validation is dropdown-only; conditional rules have six fixed comparisons; find has no replacement; cut preserves source formula text but does not retarget dependents. None of the twenty workflows below has an existing complete UI/operation.",
+  "features": [
+    {"id":"S4-01","rank":1,"name":"Per-column filters","impact":5,"effort":2,"acceptance":"Combine independent column criteria with AND while keeping the header visible."},
+    {"id":"S4-02","rank":2,"name":"Saved filter views","impact":5,"effort":2,"acceptance":"Save, restore and delete named column-filter configurations after reopening JSON."},
+    {"id":"S4-03","rank":3,"name":"Multi-column sort","impact":5,"effort":2,"acceptance":"Sort selected table by ordered ascending/descending keys without separating row cells."},
+    {"id":"S4-04","rank":4,"name":"Checkbox cells","impact":5,"effort":2,"acceptance":"Insert toggleable checkbox cells whose TRUE/FALSE values feed formulas and persist."},
+    {"id":"S4-05","rank":5,"name":"Find and replace","impact":5,"effort":2,"acceptance":"Replace matches in selection, sheet or workbook with case/whole-cell options and formula opt-in."},
+    {"id":"S4-06","rank":6,"name":"Custom-formula conditional formatting","impact":5,"effort":3,"acceptance":"A relative formula evaluates per target cell, including cross-column conditions."},
+    {"id":"S4-07","rank":7,"name":"Custom-formula data validation","impact":5,"effort":3,"acceptance":"Reject a proposed edit when its relative custom formula is false or errors, without changing saved cells."},
+    {"id":"S4-08","rank":8,"name":"Remove duplicate rows","impact":4,"effort":2,"acceptance":"Choose key columns and header handling; compact unique rows while preserving complete cell objects."},
+    {"id":"S4-09","rank":9,"name":"Split text into columns","impact":4,"effort":2,"acceptance":"Split a selected text column by delimiter with quoted-field handling and safe destination checks."},
+    {"id":"S4-10","rank":10,"name":"Trim whitespace cleanup","impact":4,"effort":1,"acceptance":"Trim and collapse whitespace in selected literal text without rewriting formulas."},
+    {"id":"S4-11","rank":11,"name":"Format painter","impact":4,"effort":1,"acceptance":"Capture one cell style and paint another selection in one action without changing values."},
+    {"id":"S4-12","rank":12,"name":"Formula-safe cut","impact":5,"effort":4,"acceptance":"Move cells and retarget dependent scalar and fully-contained range references across sheets, preserving anchors and literals; reject unsupported partial-range moves atomically."},
+    {"id":"S4-13","rank":13,"name":"Alternating row colors","impact":4,"effort":1,"acceptance":"Apply a header color and alternating body fills over a selected table, preserving values."},
+    {"id":"S4-14","rank":14,"name":"Cell notes","impact":4,"effort":1,"acceptance":"Save, inspect and remove a cell note with visible grid indicator."},
+    {"id":"S4-15","rank":15,"name":"Cell hyperlinks","impact":4,"effort":2,"acceptance":"Attach and safely open an HTTP/HTTPS/mailto link without losing the cell value."},
+    {"id":"S4-16","rank":16,"name":"Paste transposed cells","impact":4,"effort":2,"acceptance":"Paste a copied rectangle with rows/columns swapped and formula-relative references adjusted."},
+    {"id":"S4-17","rank":17,"name":"Text case cleanup","impact":3,"effort":1,"acceptance":"Convert literal text to upper/lower/title case while preserving formulas, numbers and formatting."},
+    {"id":"S4-18","rank":18,"name":"Freeze through selection","impact":4,"effort":1,"acceptance":"Freeze multiple rows and columns through the selected cell and retain their offsets on scroll."},
+    {"id":"S4-19","rank":19,"name":"Sheet tab colors","impact":3,"effort":1,"acceptance":"Choose a saved worksheet tab color that remains visible after switching sheets."},
+    {"id":"S4-20","rank":20,"name":"Fill business days","impact":3,"effort":2,"acceptance":"Fill dates forward while skipping Saturday/Sunday and preserving the first selected date."}
+  ]
+}

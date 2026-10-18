@@ -1,0 +1,3 @@
+import test from'node:test';import assert from'node:assert/strict';import {parseDelimited}from'../src/lib/delimited.js';
+test('[H2-03] CSV and TSV imports preserve quoted separators, quotes and multiline Unicode fields',()=>{assert.deepEqual(parseDelimited('\uFEFFName,Note\r\n"A, B","One\r\ntwo ""quoted"""\r\n'),[['Name','Note'],['A, B','One\r\ntwo "quoted"']]);assert.deepEqual(parseDelimited('Name\tNote\n张三\t"a\tb"','\t'),[['Name','Note'],['张三','a\tb']]);});
+test('[H2-04] malformed or oversized delimited files fail without silently losing cells',()=>{assert.throws(()=>parseDelimited('"open'),/unclosed/);assert.throws(()=>parseDelimited(Array(201).fill('x').join(',')),/200-column/);assert.throws(()=>parseDelimited(Array(10001).fill('x').join('\n')),/10,000-row/);});

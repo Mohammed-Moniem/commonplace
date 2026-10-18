@@ -1,0 +1,420 @@
+{
+  "schemaVersion": 1,
+  "suite": "Slides advanced local behavior",
+  "candidateTests": 24,
+  "cases": [
+    {
+      "id": "L2-01",
+      "testfile": "tests/slidesAdvanced.test.js",
+      "testName": "[L2-01] SLIDE-MULTI-TRANSFORM: shift toggles an entire group and ordinary select resolves group membership",
+      "behavior": "SLIDE-MULTI-TRANSFORM: shift toggles an entire group and ordinary select resolves group membership",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1696521?hl=en",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "New-model function prerequisite is explicitly unavailable in the preserved baseline; unavailable prerequisites are not recorded as simulated workflow execution.",
+      "verification": "Semantic function/output tests; real-browser editor interaction requires independent CUA review."
+    },
+    {
+      "id": "L2-21",
+      "testfile": "tests/slidesAdvanced.test.js",
+      "testName": "[L2-21] SLIDE-MULTI-TRANSFORM: multi-object move preserves distances, text and unselected geometry",
+      "behavior": "SLIDE-MULTI-TRANSFORM: multi-object move preserves distances, text and unselected geometry",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1696521?hl=en",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "New-model function prerequisite is explicitly unavailable in the preserved baseline; unavailable prerequisites are not recorded as simulated workflow execution.",
+      "verification": "Semantic function/output tests; real-browser editor interaction requires independent CUA review."
+    },
+    {
+      "id": "L2-22",
+      "testfile": "tests/slidesAdvanced.test.js",
+      "testName": "[L2-22] SLIDE-MULTI-TRANSFORM: group resize scales geometry from the same origin and text proportionally",
+      "behavior": "SLIDE-MULTI-TRANSFORM: group resize scales geometry from the same origin and text proportionally",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1696521?hl=en",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "New-model function prerequisite is explicitly unavailable in the preserved baseline; unavailable prerequisites are not recorded as simulated workflow execution.",
+      "verification": "Semantic function/output tests; real-browser editor interaction requires independent CUA review."
+    },
+    {
+      "id": "L2-23",
+      "testfile": "tests/slidesAdvanced.test.js",
+      "testName": "[L2-23] SLIDE-MULTI-TRANSFORM: group rotate moves centres together and ungroup retains the rendered transform",
+      "behavior": "SLIDE-MULTI-TRANSFORM: group rotate moves centres together and ungroup retains the rendered transform",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1696521?hl=en",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "New-model function prerequisite is explicitly unavailable in the preserved baseline; unavailable prerequisites are not recorded as simulated workflow execution.",
+      "verification": "Semantic function/output tests; real-browser editor interaction requires independent CUA review."
+    },
+    {
+      "id": "L2-02",
+      "testfile": "tests/slidesAdvanced.test.js",
+      "testName": "[L2-02] SLIDE-EDITABLE-TABLE-CHART: cell changes and table resize preserve retained data",
+      "behavior": "SLIDE-EDITABLE-TABLE-CHART: cell changes and table resize preserve retained data",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1634140?hl=en",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "New-model function prerequisite is explicitly unavailable in the preserved baseline; unavailable prerequisites are not recorded as simulated workflow execution.",
+      "verification": "Semantic function/output tests; real-browser editor interaction requires independent CUA review."
+    },
+    {
+      "id": "L2-04",
+      "testfile": "tests/slidesAdvanced.test.js",
+      "testName": "[L2-04] SLIDE-ANIMATION-STEPS: sparse animation steps advance before the next slide and reverse deterministically",
+      "behavior": "SLIDE-ANIMATION-STEPS: sparse animation steps advance before the next slide and reverse deterministically",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1689475?hl=en-GB",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "New-model function prerequisite is explicitly unavailable in the preserved baseline; unavailable prerequisites are not recorded as simulated workflow execution.",
+      "verification": "Semantic function/output tests; real-browser editor interaction requires independent CUA review."
+    },
+    {
+      "id": "L2-06",
+      "testfile": "tests/slidesAdvanced.test.js",
+      "testName": "[L2-06] SLIDE-ROTATION-MASTER-ASPECT: legacy content stays editable and 4:3 conversion scales the slide vertically",
+      "behavior": "SLIDE-ROTATION-MASTER-ASPECT: legacy content stays editable and 4:3 conversion scales the slide vertically",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1705254?hl=en",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "New-model function prerequisite is explicitly unavailable in the preserved baseline; unavailable prerequisites are not recorded as simulated workflow execution.",
+      "verification": "Semantic function/output tests; real-browser editor interaction requires independent CUA review."
+    },
+    {
+      "id": "L2-24",
+      "testfile": "tests/slidesAdvanced.test.js",
+      "testName": "[L2-24] SLIDE-ROTATION-MASTER-ASPECT: applying master changes style while preserving authored text and notes",
+      "behavior": "SLIDE-ROTATION-MASTER-ASPECT: applying master changes style while preserving authored text and notes",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1705254?hl=en",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "New-model function prerequisite is explicitly unavailable in the preserved baseline; unavailable prerequisites are not recorded as simulated workflow execution.",
+      "verification": "Semantic function/output tests; real-browser editor interaction requires independent CUA review."
+    },
+    {
+      "id": "L2-03",
+      "testfile": "tests/slidesAdvanced.test.js",
+      "testName": "[L2-03] SLIDE-LOCAL-MEDIA: export limitations explicitly explain media placeholders and animation flattening",
+      "behavior": "SLIDE-LOCAL-MEDIA: export limitations explicitly explain media placeholders and animation flattening",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/97447?hl=en",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "New-model function prerequisite is explicitly unavailable in the preserved baseline; unavailable prerequisites are not recorded as simulated workflow execution.",
+      "verification": "Semantic function/output tests; real-browser editor interaction requires independent CUA review."
+    },
+    {
+      "id": "L2-07",
+      "testfile": "tests/slidesAdvanced.test.js",
+      "testName": "[L2-07] Native PowerPoint contains real editable tables, cached charts and embedded editable workbook data",
+      "behavior": "Native PowerPoint contains real editable tables, cached charts and embedded editable workbook data",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1634140?hl=en",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "New-model function prerequisite is explicitly unavailable in the preserved baseline; unavailable prerequisites are not recorded as simulated workflow execution.",
+      "verification": "Semantic function/output tests; real-browser editor interaction requires independent CUA review."
+    },
+    {
+      "id": "L2-08",
+      "testfile": "tests/slidesAdvanced.test.js",
+      "testName": "[L2-08] PowerPoint re-import preserves every local advanced type and group/animation/media data losslessly",
+      "behavior": "PowerPoint re-import preserves every local advanced type and group/animation/media data losslessly",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1634140?hl=en",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "New-model function prerequisite is explicitly unavailable in the preserved baseline; unavailable prerequisites are not recorded as simulated workflow execution.",
+      "verification": "Semantic function/output tests; real-browser editor interaction requires independent CUA review."
+    },
+    {
+      "id": "L2-09",
+      "testfile": "tests/slidesAdvanced.test.js",
+      "testName": "[L2-09] Native PowerPoint table/chart import works even without Commonplace metadata",
+      "behavior": "Native PowerPoint table/chart import works even without Commonplace metadata",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1634140?hl=en",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "New-model function prerequisite is explicitly unavailable in the preserved baseline; unavailable prerequisites are not recorded as simulated workflow execution.",
+      "verification": "Semantic function/output tests; real-browser editor interaction requires independent CUA review."
+    },
+    {
+      "id": "L2-10",
+      "testfile": "tests/slidesAdvanced.test.js",
+      "testName": "[L2-10] SVG export renders table/chart/media placeholders with rotation and shadows safely",
+      "behavior": "SVG export renders table/chart/media placeholders with rotation and shadows safely",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1634140?hl=en",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "New-model function prerequisite is explicitly unavailable in the preserved baseline; unavailable prerequisites are not recorded as simulated workflow execution.",
+      "verification": "Semantic function/output tests; real-browser editor interaction requires independent CUA review."
+    },
+    {
+      "id": "L2-11",
+      "testfile": "tests/slidesAdvanced.test.js",
+      "testName": "[L2-11] Interactive HTML preserves playable local media without executable source-data injection",
+      "behavior": "Interactive HTML preserves playable local media without executable source-data injection",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/97447?hl=en",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "New-model function prerequisite is explicitly unavailable in the preserved baseline; unavailable prerequisites are not recorded as simulated workflow execution.",
+      "verification": "Semantic function/output tests; real-browser editor interaction requires independent CUA review."
+    },
+    {
+      "id": "L2-12",
+      "testfile": "tests/slidesAdvanced.test.js",
+      "testName": "[L2-12] Exported HTML actually advances animation steps before slides and reverses with keyboard",
+      "behavior": "Exported HTML actually advances animation steps before slides and reverses with keyboard",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1689475?hl=en-GB",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "New-model function prerequisite is explicitly unavailable in the preserved baseline; unavailable prerequisites are not recorded as simulated workflow execution.",
+      "verification": "Happy DOM executes trusted exported HTML runtime and real button/keyboard handlers."
+    },
+    {
+      "id": "L2-19",
+      "testfile": "tests/slidesAdvanced.test.js",
+      "testName": "[L2-19] Malformed imported text, tables, charts, media and nonfinite transforms reject before rendering",
+      "behavior": "Malformed imported text, tables, charts, media and nonfinite transforms reject before rendering",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1634140?hl=en",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "New-model function prerequisite is explicitly unavailable in the preserved baseline; unavailable prerequisites are not recorded as simulated workflow execution.",
+      "verification": "Deep input validation before editor state mutation."
+    },
+    {
+      "id": "L2-20",
+      "testfile": "tests/slidesAdvanced.test.js",
+      "testName": "[L2-20] HTML autoplay is opt-in only on active slide, pauses outgoing media and pauses on exit",
+      "behavior": "HTML autoplay is opt-in only on active slide, pauses outgoing media and pauses on exit",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1689475?hl=en-GB",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "New-model function prerequisite is explicitly unavailable in the preserved baseline; unavailable prerequisites are not recorded as simulated workflow execution.",
+      "verification": "Happy DOM executes trusted exported runtime with media play/pause methods instrumented; validates control routing, not codec decoding."
+    },
+    {
+      "id": "L2-13",
+      "testfile": "tests/slidesComparable.test.js",
+      "testName": "[L2-13] Comparable native PowerPoint export represents a table as editable cells rather than a generic shape",
+      "behavior": "Comparable native PowerPoint export represents a table as editable cells rather than a generic shape",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1634140?hl=en",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "The same existing public export function receives the same literal fixture against baseline and candidate. Baseline actually fails this atomic output requirement; candidate passes.",
+      "verification": "Direct exported artifact structure inspected via namespace-aware XML parser or inert HTML DOM."
+    },
+    {
+      "id": "L2-14",
+      "testfile": "tests/slidesComparable.test.js",
+      "testName": "[L2-14] Comparable native PowerPoint chart export contains series cache and an embedded workbook",
+      "behavior": "Comparable native PowerPoint chart export contains series cache and an embedded workbook",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1634140?hl=en",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "The same existing public export function receives the same literal fixture against baseline and candidate. Baseline actually fails this atomic output requirement; candidate passes.",
+      "verification": "Direct exported artifact structure inspected via namespace-aware XML parser or inert HTML DOM."
+    },
+    {
+      "id": "L2-15",
+      "testfile": "tests/slidesComparable.test.js",
+      "testName": "[L2-15] Comparable HTML export offers actual playable local media without loading every autoplay source",
+      "behavior": "Comparable HTML export offers actual playable local media without loading every autoplay source",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/97447?hl=en",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "The same existing public export function receives the same literal fixture against baseline and candidate. Baseline actually fails this atomic output requirement; candidate passes.",
+      "verification": "Direct exported artifact structure inspected via namespace-aware XML parser or inert HTML DOM."
+    },
+    {
+      "id": "L2-16",
+      "testfile": "tests/slidesComparable.test.js",
+      "testName": "[L2-16] Comparable SVG export respects 4:3 geometry and preserves object rotation",
+      "behavior": "Comparable SVG export respects 4:3 geometry and preserves object rotation",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1705254?hl=en",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "The same existing public export function receives the same literal fixture against baseline and candidate. Baseline actually fails this atomic output requirement; candidate passes.",
+      "verification": "Direct exported artifact structure inspected via namespace-aware XML parser or inert HTML DOM."
+    },
+    {
+      "id": "L2-17",
+      "testfile": "tests/slidesComparable.test.js",
+      "testName": "[L2-17] Comparable HTML contains animation step metadata and usable presentation controls",
+      "behavior": "Comparable HTML contains animation step metadata and usable presentation controls",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1689475?hl=en-GB",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "The same existing public export function receives the same literal fixture against baseline and candidate. Baseline actually fails this atomic output requirement; candidate passes.",
+      "verification": "Direct exported artifact structure inspected via namespace-aware XML parser or inert HTML DOM."
+    },
+    {
+      "id": "L2-18",
+      "testfile": "tests/slidesComparable.test.js",
+      "testName": "[L2-18] Comparable PowerPoint export preserves native shape rotation, opacity, border and shadow",
+      "behavior": "Comparable PowerPoint export preserves native shape rotation, opacity, border and shadow",
+      "expectedResult": "All semantic assertions in the named test pass against the selected implementation; byte/DOM/geometry assertions establish only the stated local behavior.",
+      "sourceURL": "https://support.google.com/docs/answer/1696521?hl=en",
+      "referenceScope": "Public Google help capability-family description; not a matched original-editor runtime capture.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json",
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "baselineComparison": "The same existing public export function receives the same literal fixture against baseline and candidate. Baseline actually fails this atomic output requirement; candidate passes.",
+      "verification": "Direct exported artifact structure inspected via namespace-aware XML parser or inert HTML DOM."
+    },
+    {
+      "id": "L2-25",
+      "testfile": "tests/slidesAdvanced.test.js",
+      "testName": "[L2-25] Server-valid legacy colors, null groups and larger imported data remain openable without silent truncation",
+      "behavior": "Server-valid legacy colors, null groups and larger imported data remain openable without silent truncation",
+      "expectedResult": "Server-valid larger tables/charts, legacy named/rgb CSS colors, null group membership, and master font bounds normalize without truncation or render-blocking validation failures.",
+      "sourceURL": "https://support.google.com/docs/answer/1705254?hl=en",
+      "referenceScope": "Public feature-family documentation only; this is a local compatibility regression.",
+      "baselineEvidence": [
+        "evidence/slides-advanced-baseline.json"
+      ],
+      "baselineComparison": "New normalization prerequisite explicitly unavailable in preserved baseline; not simulated original workflow execution.",
+      "verification": "Semantic data-preservation assertions."
+    }
+  ],
+  "manualCases": [
+    {
+      "id": "L2-05",
+      "behavior": "Presenter notes, next-slide preview, elapsed timer, keyboard step navigation, and a separate synchronized audience stage with exactly one active media playback surface.",
+      "expectedResult": "Independent CUA reviewer observes these behaviors on isolated candidate server; next-slide media never autoplays and opening audience stage does not duplicate audio.",
+      "sourceURL": "https://support.google.com/docs/answer/1696787?hl=en",
+      "baselineEvidence": [
+        "evidence/benchmark-v2/baseline/slides-main.txt"
+      ],
+      "status": "PASS_BOUNDED",
+      "observedResult": "Independent Sheets reviewer verified presenter notes and next-slide preview, animation progression on the same slide, current-slide real H264/WAV playback, zero mounted media in Up next, removal of presenter media when opening the separate audience stage, and media removal on exit. The presenter snapshot shows an elapsed timer at 00:06.",
+      "evidence": [
+        "evidence/benchmark-v2/slides-independent-review.md",
+        "evidence/benchmark-v2/slides-independent-animation-values.json",
+        "evidence/benchmark-v2/slides-independent-animation-presenter.txt",
+        "evidence/benchmark-v2/slides-independent-media-summary.json",
+        "evidence/benchmark-v2/slides-independent-media-values.json",
+        "evidence/benchmark-v2/slides-independent-audience-stage.txt",
+        "evidence/benchmark-v2/slides-independent-html-values.json"
+      ],
+      "limitations": [
+        "Chrome initially blocked autoplay in the separate audience popup. Its native Play control succeeded; automatic playback success is not claimed for that popup.",
+        "The independent report and snapshot establish the visible elapsed timer, but do not claim a separate timer-reset interaction or exhaustive browser keyboard coverage.",
+        "This is bounded verification of the isolated local candidate, not whole-application acceptance, original Google runtime observation, or complete feature parity."
+      ],
+      "sourceVerification": {
+        "status": "MATCHES_INDEPENDENT_REVIEW",
+        "review": "evidence/benchmark-v2/slides-independent-review.md",
+        "sha256": {
+          "src/editors/SlidesEditor.jsx": "84e13941ac55226e3c0da48391689418b1fb9ba244c4b5f17905bbc401dbefa6",
+          "src/editors/slideModel.js": "e82831433d27b29ddcbd084b83fa5c046f7cfeb4e3f7baab45a3aed7e3fd1a39",
+          "src/editors/slideVisuals.js": "f5b19871ad29b352f5d7409bbbb14f60bdb24a962077961a7356608b6218b737",
+          "src/editors/slideHtml.js": "6b4d74321e42d9bea63081bcc00b32c11532078a7f9e7db954b1d337968b17bc",
+          "src/editors/slideExport.js": "1aae65fb19a75adfcb9c9c965b3bdc3aeddd121e05595b918d18406649681d6b",
+          "src/editors/slideOoxml.js": "21da32e1be1f943834de8941ee6424174b4b6316b3c3685d9f5fc4e5ba54e9bd"
+        }
+      }
+    }
+  ],
+  "referencedEvidence": [
+    {
+      "path": "evidence/slides-advanced-baseline.json",
+      "status": "EXISTS_AT_ORIGINAL_SOURCE_PATH",
+      "sha256": "43332df901454630aef3426adddcc1439c22584d1cbb1e2d2db547763f6fedbd",
+      "scope": "Static local implementation inspection captured before advanced edits; not an executed Google or baseline-browser workflow.",
+      "locationNote": "Outside benchmark-v2; original evidence path preserved. No packaging requirement is implied."
+    }
+  ],
+  "limits": [
+    "Public documentation informs feature scope only. No full Google behavior or visual parity is asserted.",
+    "PowerPoint uses named placeholder cards for audio/video and initially visible objects for local animation steps; HTML/Commonplace retain playable media and animations. Native tables/charts and embedded chart data are exported.",
+    "The model represents master defaults, not a complete inherited Google Theme Builder layout tree.",
+    "Model and artifact tests do not establish browser codec compatibility or Microsoft PowerPoint opening fidelity."
+  ]
+}

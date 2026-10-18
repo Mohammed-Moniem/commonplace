@@ -1,0 +1,491 @@
+{
+  "app": "docs",
+  "version": "v2 bounded local editor increment",
+  "status": "PARTIAL; full Google Docs capability parity not accepted",
+  "evidenceTypes": "Five same-fixture executable Docs export/import comparisons failed on frozen0.1 and pass on current. Separately,8 actual baseline UI availability failures are distinct from19 current ProseMirror/transform tests. Related availability prerequisites are deduplicated, never counted as executed baseline editing tests.",
+  "sourceFiles": {
+    "src/editors/DocsEditor.jsx": "b6c358390c4906cf55dfead9393f42144ca7b6fc5ca665fb567756c0e342c04a",
+    "src/editors/docs.css": "147cef1fb644e28a412be4e84a14dfbd2cc693a1f5957eff4c186ddf4972813c",
+    "src/editors/docsModel.js": "fb71c6e8888d1eeaa5f50b56d750db23812c25c2d76c36ba9b9da9f737eb3bff",
+    "src/editors/docsExtensions.js": "1ae31f6eeb0949c848a5a13d863c74036be36ee8952e813638587418fc8269b3",
+    "src/editors/docsMarkdown.js": "b4765c89a2450c9d66aa73f5afb33962a48c7fb0b2fa81b0e0ec0e089c315d6f",
+    "src/editors/docsExport.js": "dfd10cb90faa0dafa5d3d15dff83c06f3a48c9b449476fc6b0e904f2b8426f2d",
+    "src/editors/docsImport.js": "589c9ae0a991850d07b8f3964c0f5de0b98394a3b3e90164b89c6858ca8bd5aa",
+    "tests/docs-v2.test.js": "e8a80abfc3a4374a13187507e1c742773d8b1d4ac3971082b51e4736d227a051",
+    "tests/docs-v2-comparable.test.js": "6f27439be8409b7ef94af9dc2816c10a83c3adb5733c9a1e6b96a6e07becff7c"
+  },
+  "cases": [
+    {
+      "id": "D2-01",
+      "behaviour": "tabs preserve separate bodies, active mirror, order and last-tab safety",
+      "expectedResult": "Separate persisted tab bodies, page settings and active mirror survive JSON; rename/reorder/delete work and the final tab is retained.",
+      "testFile": "tests/docs-v2.test.js",
+      "testName": "[D2-01] tabs preserve separate bodies, active mirror, order and last-tab safety",
+      "officialSource": "https://support.google.com/docs/answer/15499791?hl=en",
+      "currentEvidence": {
+        "method": "Automated actual ProseMirror transactions / document transforms / OOXML ZIP and import assertions in happy-dom, not browser UI acceptance",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-test.log"
+      },
+      "baselineCaseEvidence": {
+        "file": "evidence/benchmark-v2/docs-baseline-observation.json",
+        "relatedCaseId": "DOC-TABS-01",
+        "result": "FAIL_AVAILABILITY_PREREQUISITE",
+        "limit": "Related cases share one missing-control observation. They are not separate executed baseline editing tests and must not be counted as distinct baseline failures."
+      }
+    },
+    {
+      "id": "D2-02",
+      "behaviour": "suggesting replacement rejects to exact original and accepts proposed text",
+      "expectedResult": "A replacement retains original deleted text and proposed insertion under one suggestion; Reject returns exact original; Accept returns proposed body.",
+      "testFile": "tests/docs-v2.test.js",
+      "testName": "[D2-02] suggesting replacement rejects to exact original and accepts proposed text",
+      "officialSource": "https://support.google.com/docs/answer/6033474?hl=en",
+      "currentEvidence": {
+        "method": "Automated actual ProseMirror transactions / document transforms / OOXML ZIP and import assertions in happy-dom, not browser UI acceptance",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-test.log"
+      },
+      "baselineCaseEvidence": {
+        "file": "evidence/benchmark-v2/docs-baseline-observation.json",
+        "relatedCaseId": "DOC-SUGGEST-01",
+        "result": "FAIL_AVAILABILITY_PREREQUISITE",
+        "limit": "Related cases share one missing-control observation. They are not separate executed baseline editing tests and must not be counted as distinct baseline failures."
+      }
+    },
+    {
+      "id": "D2-03",
+      "behaviour": "insertion coalesces typing, deletion of own insertion cancels, undo restores",
+      "expectedResult": "Consecutive inserted text shares one suggestion; deleting pending insertion cancels it; undo and redo preserve the review state.",
+      "testFile": "tests/docs-v2.test.js",
+      "testName": "[D2-03] insertion coalesces typing, deletion of own insertion cancels, undo restores",
+      "officialSource": "https://support.google.com/docs/answer/6033474?hl=en",
+      "currentEvidence": {
+        "method": "Automated actual ProseMirror transactions / document transforms / OOXML ZIP and import assertions in happy-dom, not browser UI acceptance",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-test.log"
+      },
+      "baselineCaseEvidence": {
+        "file": "evidence/benchmark-v2/docs-baseline-observation.json",
+        "relatedCaseId": "DOC-SUGGEST-01",
+        "result": "FAIL_AVAILABILITY_PREREQUISITE",
+        "limit": "Related cases share one missing-control observation. They are not separate executed baseline editing tests and must not be counted as distinct baseline failures."
+      }
+    },
+    {
+      "id": "D2-04",
+      "behaviour": "separate suggestions can be reviewed individually and survive HTML serialization",
+      "expectedResult": "Separate suggestions retain identifiers and author through HTML; rejecting one leaves the other pending.",
+      "testFile": "tests/docs-v2.test.js",
+      "testName": "[D2-04] separate suggestions can be reviewed individually and survive HTML serialization",
+      "officialSource": "https://support.google.com/docs/answer/6033474?hl=en",
+      "currentEvidence": {
+        "method": "Automated actual ProseMirror transactions / document transforms / OOXML ZIP and import assertions in happy-dom, not browser UI acceptance",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-test.log"
+      },
+      "baselineCaseEvidence": {
+        "file": "evidence/benchmark-v2/docs-baseline-observation.json",
+        "relatedCaseId": "DOC-SUGGEST-01",
+        "result": "FAIL_AVAILABILITY_PREREQUISITE",
+        "limit": "Related cases share one missing-control observation. They are not separate executed baseline editing tests and must not be counted as distinct baseline failures."
+      }
+    },
+    {
+      "id": "D2-05",
+      "behaviour": "checklist toggles checked state and nested items roundtrip",
+      "expectedResult": "Task list checked state survives HTML roundtrip.",
+      "testFile": "tests/docs-v2.test.js",
+      "testName": "[D2-05] checklist toggles checked state and nested items roundtrip",
+      "officialSource": "https://support.google.com/docs/answer/1663349?hl=en",
+      "currentEvidence": {
+        "method": "Automated actual ProseMirror transactions / document transforms / OOXML ZIP and import assertions in happy-dom, not browser UI acceptance",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-test.log"
+      },
+      "baselineCaseEvidence": {
+        "file": "evidence/benchmark-v2/docs-baseline-observation.json",
+        "relatedCaseId": "DOC-CHECKLIST-01",
+        "result": "FAIL_AVAILABILITY_PREREQUISITE",
+        "limit": "Related cases share one missing-control observation. They are not separate executed baseline editing tests and must not be counted as distinct baseline failures."
+      }
+    },
+    {
+      "id": "D2-06",
+      "behaviour": "superscript and subscript are exclusive and serialize",
+      "expectedResult": "Selected text uses subscript or superscript exclusively and HTML preserves the chosen mark.",
+      "testFile": "tests/docs-v2.test.js",
+      "testName": "[D2-06] superscript and subscript are exclusive and serialize",
+      "officialSource": "https://support.google.com/docs/answer/1663349?hl=en",
+      "currentEvidence": {
+        "method": "Automated actual ProseMirror transactions / document transforms / OOXML ZIP and import assertions in happy-dom, not browser UI acceptance",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-test.log"
+      },
+      "baselineCaseEvidence": {
+        "file": "evidence/benchmark-v2/docs-baseline-observation.json",
+        "relatedCaseId": "DOC-SCRIPT-01",
+        "result": "FAIL_AVAILABILITY_PREREQUISITE",
+        "limit": "Related cases share one missing-control observation. They are not separate executed baseline editing tests and must not be counted as distinct baseline failures."
+      }
+    },
+    {
+      "id": "D2-07",
+      "behaviour": "paragraph indent and line spacing apply to selected paragraphs and roundtrip",
+      "expectedResult": "Indentation and line spacing apply to selected paragraphs, roundtrip, and outdent reverses indentation.",
+      "testFile": "tests/docs-v2.test.js",
+      "testName": "[D2-07] paragraph indent and line spacing apply to selected paragraphs and roundtrip",
+      "officialSource": "https://support.google.com/docs/answer/1663349?hl=en",
+      "currentEvidence": {
+        "method": "Automated actual ProseMirror transactions / document transforms / OOXML ZIP and import assertions in happy-dom, not browser UI acceptance",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-test.log"
+      },
+      "baselineCaseEvidence": {
+        "file": "evidence/benchmark-v2/docs-baseline-observation.json",
+        "relatedCaseId": "DOC-PARAGRAPH-01",
+        "result": "FAIL_AVAILABILITY_PREREQUISITE",
+        "limit": "Related cases share one missing-control observation. They are not separate executed baseline editing tests and must not be counted as distinct baseline failures."
+      }
+    },
+    {
+      "id": "D2-08",
+      "behaviour": "footnotes renumber after deletion and preserve text in saved HTML",
+      "expectedResult": "Footnotes retain source text in HTML and renumber sequentially after a reference is deleted.",
+      "testFile": "tests/docs-v2.test.js",
+      "testName": "[D2-08] footnotes renumber after deletion and preserve text in saved HTML",
+      "officialSource": "https://support.google.com/docs/answer/86629?hl=en",
+      "currentEvidence": {
+        "method": "Automated actual ProseMirror transactions / document transforms / OOXML ZIP and import assertions in happy-dom, not browser UI acceptance",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-test.log"
+      },
+      "baselineCaseEvidence": {
+        "file": "evidence/benchmark-v2/docs-baseline-observation.json",
+        "relatedCaseId": "DOC-FOOTNOTE-01",
+        "result": "FAIL_AVAILABILITY_PREREQUISITE",
+        "limit": "Related cases share one missing-control observation. They are not separate executed baseline editing tests and must not be counted as distinct baseline failures."
+      }
+    },
+    {
+      "id": "D2-09",
+      "behaviour": "table of contents updates text and stable links after heading edits",
+      "expectedResult": "Table of contents updates when headings change and retains links to stable heading identifiers.",
+      "testFile": "tests/docs-v2.test.js",
+      "testName": "[D2-09] table of contents updates text and stable links after heading edits",
+      "officialSource": "https://support.google.com/docs/answer/116338?hl=en",
+      "currentEvidence": {
+        "method": "Automated actual ProseMirror transactions / document transforms / OOXML ZIP and import assertions in happy-dom, not browser UI acceptance",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-test.log"
+      },
+      "baselineCaseEvidence": {
+        "file": "evidence/benchmark-v2/docs-baseline-observation.json",
+        "relatedCaseId": "DOC-TOC-01",
+        "result": "FAIL_AVAILABILITY_PREREQUISITE",
+        "limit": "Related cases share one missing-control observation. They are not separate executed baseline editing tests and must not be counted as distinct baseline failures."
+      }
+    },
+    {
+      "id": "D2-10",
+      "behaviour": "image width and wrapping survive HTML and explicit page layout calculates gaps",
+      "expectedResult": "Image width/height/wrapping serialize; block page layout returns expected overflow gap. Actual resize geometry still requires browser review.",
+      "testFile": "tests/docs-v2.test.js",
+      "testName": "[D2-10] image width and wrapping survive HTML and explicit page layout calculates gaps",
+      "officialSource": null,
+      "currentEvidence": {
+        "method": "Automated actual ProseMirror transactions / document transforms / OOXML ZIP and import assertions in happy-dom, not browser UI acceptance",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-test.log"
+      },
+      "baselineCaseEvidence": {
+        "file": "evidence/benchmark-v2/docs-baseline-observation.json",
+        "relatedCaseId": null,
+        "result": "NOT_TESTED",
+        "limit": "No comparable baseline workflow executed; current success does not establish baseline failure."
+      }
+    },
+    {
+      "id": "D2-11",
+      "behaviour": "Markdown imports headings, inline formatting, nested tasks, links, table and code safely",
+      "expectedResult": "Markdown creates headings, inline marks, nested tasks, tables and fenced code; raw HTML is escaped and executable link protocols are rejected.",
+      "testFile": "tests/docs-v2.test.js",
+      "testName": "[D2-11] Markdown imports headings, inline formatting, nested tasks, links, table and code safely",
+      "officialSource": "https://support.google.com/docs/answer/12014036?hl=en",
+      "currentEvidence": {
+        "method": "Automated actual ProseMirror transactions / document transforms / OOXML ZIP and import assertions in happy-dom, not browser UI acceptance",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-test.log"
+      },
+      "baselineCaseEvidence": {
+        "file": "evidence/benchmark-v2/docs-baseline-observation.json",
+        "relatedCaseId": null,
+        "result": "NOT_TESTED",
+        "limit": "No comparable baseline workflow executed; current success does not establish baseline failure."
+      }
+    },
+    {
+      "id": "D2-12",
+      "behaviour": "Markdown export and reimport retain portable document content and footnotes",
+      "expectedResult": "Portable Markdown export and reimport retain tested content, checked task and footnote source.",
+      "testFile": "tests/docs-v2.test.js",
+      "testName": "[D2-12] Markdown export and reimport retain portable document content and footnotes",
+      "officialSource": "https://support.google.com/docs/answer/12014036?hl=en",
+      "currentEvidence": {
+        "method": "Automated actual ProseMirror transactions / document transforms / OOXML ZIP and import assertions in happy-dom, not browser UI acceptance",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-test.log"
+      },
+      "baselineCaseEvidence": {
+        "file": "evidence/benchmark-v2/docs-baseline-observation.json",
+        "relatedCaseId": null,
+        "result": "NOT_TESTED",
+        "limit": "No comparable baseline workflow executed; current success does not establish baseline failure."
+      }
+    },
+    {
+      "id": "D2-13",
+      "behaviour": "multiple replace-all steps reject without losing text and review is undoable",
+      "expectedResult": "A transaction with two replacement steps rejects to exact original text and reviewing can be undone.",
+      "testFile": "tests/docs-v2.test.js",
+      "testName": "[D2-13] multiple replace-all steps reject without losing text and review is undoable",
+      "officialSource": "https://support.google.com/docs/answer/6033474?hl=en",
+      "currentEvidence": {
+        "method": "Automated actual ProseMirror transactions / document transforms / OOXML ZIP and import assertions in happy-dom, not browser UI acceptance",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-test.log"
+      },
+      "baselineCaseEvidence": {
+        "file": "evidence/benchmark-v2/docs-baseline-observation.json",
+        "relatedCaseId": "DOC-SUGGEST-01",
+        "result": "FAIL_AVAILABILITY_PREREQUISITE",
+        "limit": "Related cases share one missing-control observation. They are not separate executed baseline editing tests and must not be counted as distinct baseline failures."
+      }
+    },
+    {
+      "id": "D2-14",
+      "behaviour": "pageless preference stays independent per tab through saved JSON",
+      "expectedResult": "Page mode remains independent for each tab through JSON serialization.",
+      "testFile": "tests/docs-v2.test.js",
+      "testName": "[D2-14] pageless preference stays independent per tab through saved JSON",
+      "officialSource": "https://support.google.com/docs/answer/11528737?hl=en",
+      "currentEvidence": {
+        "method": "Automated actual ProseMirror transactions / document transforms / OOXML ZIP and import assertions in happy-dom, not browser UI acceptance",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-test.log"
+      },
+      "baselineCaseEvidence": {
+        "file": "evidence/benchmark-v2/docs-baseline-observation.json",
+        "relatedCaseId": "DOC-PAGELESS-01",
+        "result": "FAIL_AVAILABILITY_PREREQUISITE",
+        "limit": "Related cases share one missing-control observation. They are not separate executed baseline editing tests and must not be counted as distinct baseline failures."
+      }
+    },
+    {
+      "id": "D2-15",
+      "behaviour": "suggesting across paragraph boundaries retains deleted text and rejects without loss",
+      "expectedResult": "A replacement spanning two paragraphs retains deleted text and rejects to original paragraph structure.",
+      "testFile": "tests/docs-v2.test.js",
+      "testName": "[D2-15] suggesting across paragraph boundaries retains deleted text and rejects without loss",
+      "officialSource": "https://support.google.com/docs/answer/6033474?hl=en",
+      "currentEvidence": {
+        "method": "Automated actual ProseMirror transactions / document transforms / OOXML ZIP and import assertions in happy-dom, not browser UI acceptance",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-test.log"
+      },
+      "baselineCaseEvidence": {
+        "file": "evidence/benchmark-v2/docs-baseline-observation.json",
+        "relatedCaseId": "DOC-SUGGEST-01",
+        "result": "FAIL_AVAILABILITY_PREREQUISITE",
+        "limit": "Related cases share one missing-control observation. They are not separate executed baseline editing tests and must not be counted as distinct baseline failures."
+      }
+    },
+    {
+      "id": "D2-16",
+      "behaviour": "Word package contains real footnotes, script styles and paragraph layout and reimports them",
+      "expectedResult": "DOCX ZIP contains real footnote part/reference/content type plus superscript/subscript/indent/spacing; import reconstructs source text and styles.",
+      "testFile": "tests/docs-v2.test.js",
+      "testName": "[D2-16] Word package contains real footnotes, script styles and paragraph layout and reimports them",
+      "officialSource": "https://support.google.com/docs/answer/86629?hl=en",
+      "currentEvidence": {
+        "method": "Automated actual ProseMirror transactions / document transforms / OOXML ZIP and import assertions in happy-dom, not browser UI acceptance",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-test.log"
+      },
+      "baselineCaseEvidence": {
+        "file": "evidence/benchmark-v2/docs-baseline-observation.json",
+        "relatedCaseId": null,
+        "result": "NOT_TESTED",
+        "limit": "No comparable baseline workflow executed; current success does not establish baseline failure."
+      }
+    },
+    {
+      "id": "D2-17",
+      "behaviour": "printable HTML includes linked footnotes and escapes running header text",
+      "expectedResult": "Standalone HTML includes footnote destinations, running header text is escaped, and page counters are present.",
+      "testFile": "tests/docs-v2.test.js",
+      "testName": "[D2-17] printable HTML includes linked footnotes and escapes running header text",
+      "officialSource": "https://support.google.com/docs/answer/86629?hl=en",
+      "currentEvidence": {
+        "method": "Automated actual ProseMirror transactions / document transforms / OOXML ZIP and import assertions in happy-dom, not browser UI acceptance",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-test.log"
+      },
+      "baselineCaseEvidence": {
+        "file": "evidence/benchmark-v2/docs-baseline-observation.json",
+        "relatedCaseId": null,
+        "result": "NOT_TESTED",
+        "limit": "No comparable baseline workflow executed; current success does not establish baseline failure."
+      }
+    },
+    {
+      "id": "D2-18",
+      "behaviour": "browser-style full text-node reconciliation marks only the changed phrase",
+      "expectedResult": "A browser-style broad text-node replacement marks only the changed phrase at start or end and rejects without losing previously saved text.",
+      "testFile": "tests/docs-v2.test.js",
+      "testName": "[D2-18] browser-style full text-node reconciliation marks only the changed phrase",
+      "officialSource": "https://support.google.com/docs/answer/6033474?hl=en",
+      "currentEvidence": {
+        "method": "Automated actual ProseMirror transactions / document transforms / OOXML ZIP and import assertions in happy-dom, not browser UI acceptance",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-test.log"
+      },
+      "baselineCaseEvidence": {
+        "file": "evidence/benchmark-v2/docs-baseline-observation.json",
+        "relatedCaseId": "DOC-SUGGEST-01",
+        "result": "FAIL_AVAILABILITY_PREREQUISITE",
+        "limit": "Related cases share one missing-control observation. They are not separate executed baseline editing tests and must not be counted as distinct baseline failures."
+      }
+    },
+    {
+      "id": "D2-19",
+      "behaviour": "exporting all tabs includes inactive bodies with escaped labels and tab separators",
+      "expectedResult": "All-tab HTML includes inactive bodies, escaped tab names and separators.",
+      "testFile": "tests/docs-v2.test.js",
+      "testName": "[D2-19] exporting all tabs includes inactive bodies with escaped labels and tab separators",
+      "officialSource": "https://support.google.com/docs/answer/15499791?hl=en",
+      "currentEvidence": {
+        "method": "Automated actual ProseMirror transactions / document transforms / OOXML ZIP and import assertions in happy-dom, not browser UI acceptance",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-test.log"
+      },
+      "baselineCaseEvidence": {
+        "file": "evidence/benchmark-v2/docs-baseline-observation.json",
+        "relatedCaseId": "DOC-TABS-01",
+        "result": "FAIL_AVAILABILITY_PREREQUISITE",
+        "limit": "Related cases share one missing-control observation. They are not separate executed baseline editing tests and must not be counted as distinct baseline failures."
+      }
+    },
+    {
+      "id": "D2-20",
+      "behaviour": "comparable DOCX exports a real footnote part, reference, relationship and source text",
+      "expectedResult": "Actual OOXML ZIP contains footnotes.xml, one matching footnoteReference id, source text, relationship and content-type entry.",
+      "testFile": "tests/docs-v2-comparable.test.js",
+      "testName": "[D2-20] comparable DOCX exports a real footnote part, reference, relationship and source text",
+      "officialSource": "https://support.google.com/docs/answer/86629?hl=en",
+      "currentEvidence": {
+        "method": "Identical executable fixtures; inspect real generated ZIP/native XML or returned HTML; current module imports from project root.",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-comparable.log"
+      },
+      "baselineCaseEvidence": {
+        "method": "Same test file and expected values, DOCS_BENCHMARK_ROOT points to immutable extracted0.1 source. Assertions executed and failed on actual outputs.",
+        "result": "FAIL",
+        "log": "evidence/benchmark-v2/docs-baseline-comparable.log",
+        "subject": "evidence/benchmark-v2/baseline/extracted/commonplace",
+        "limit": "Five bounded representation/import behaviors only. No claim of broad Microsoft Office fidelity or original Google runtime equivalence."
+      }
+    },
+    {
+      "id": "D2-21",
+      "behaviour": "comparable DOCX represents subscript and superscript with native run vertical alignment",
+      "expectedResult": "Native Word run properties contain exactly two vertical-align values subscript/superscript attached to the intended digits.",
+      "testFile": "tests/docs-v2-comparable.test.js",
+      "testName": "[D2-21] comparable DOCX represents subscript and superscript with native run vertical alignment",
+      "officialSource": "https://support.google.com/docs/answer/1663349?hl=en",
+      "currentEvidence": {
+        "method": "Identical executable fixtures; inspect real generated ZIP/native XML or returned HTML; current module imports from project root.",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-comparable.log"
+      },
+      "baselineCaseEvidence": {
+        "method": "Same test file and expected values, DOCS_BENCHMARK_ROOT points to immutable extracted0.1 source. Assertions executed and failed on actual outputs.",
+        "result": "FAIL",
+        "log": "evidence/benchmark-v2/docs-baseline-comparable.log",
+        "subject": "evidence/benchmark-v2/baseline/extracted/commonplace",
+        "limit": "Five bounded representation/import behaviors only. No claim of broad Microsoft Office fidelity or original Google runtime equivalence."
+      }
+    },
+    {
+      "id": "D2-22",
+      "behaviour": "comparable DOCX encodes selected paragraph indentation and double line spacing",
+      "expectedResult": "First paragraph has native 720-twip indentation and 480-unit automatic line spacing; the next normal paragraph has neither override.",
+      "testFile": "tests/docs-v2-comparable.test.js",
+      "testName": "[D2-22] comparable DOCX encodes selected paragraph indentation and double line spacing",
+      "officialSource": "https://support.google.com/docs/answer/1663349?hl=en",
+      "currentEvidence": {
+        "method": "Identical executable fixtures; inspect real generated ZIP/native XML or returned HTML; current module imports from project root.",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-comparable.log"
+      },
+      "baselineCaseEvidence": {
+        "method": "Same test file and expected values, DOCS_BENCHMARK_ROOT points to immutable extracted0.1 source. Assertions executed and failed on actual outputs.",
+        "result": "FAIL",
+        "log": "evidence/benchmark-v2/docs-baseline-comparable.log",
+        "subject": "evidence/benchmark-v2/baseline/extracted/commonplace",
+        "limit": "Five bounded representation/import behaviors only. No claim of broad Microsoft Office fidelity or original Google runtime equivalence."
+      }
+    },
+    {
+      "id": "D2-23",
+      "behaviour": "comparable printable HTML includes readable footnote source with a navigable destination",
+      "expectedResult": "Standalone HTML includes one readable footnote source with destination and backlink; source is text, not executable markup.",
+      "testFile": "tests/docs-v2-comparable.test.js",
+      "testName": "[D2-23] comparable printable HTML includes readable footnote source with a navigable destination",
+      "officialSource": "https://support.google.com/docs/answer/86629?hl=en",
+      "currentEvidence": {
+        "method": "Identical executable fixtures; inspect real generated ZIP/native XML or returned HTML; current module imports from project root.",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-comparable.log"
+      },
+      "baselineCaseEvidence": {
+        "method": "Same test file and expected values, DOCS_BENCHMARK_ROOT points to immutable extracted0.1 source. Assertions executed and failed on actual outputs.",
+        "result": "FAIL",
+        "log": "evidence/benchmark-v2/docs-baseline-comparable.log",
+        "subject": "evidence/benchmark-v2/baseline/extracted/commonplace",
+        "limit": "Five bounded representation/import behaviors only. No claim of broad Microsoft Office fidelity or original Google runtime equivalence."
+      }
+    },
+    {
+      "id": "D2-24",
+      "behaviour": "comparable standard OOXML footnote import retains editable source text and reference",
+      "expectedResult": "A manually authored standard Word footnote fixture imports to editable source metadata and numbered inline reference; no self-writer roundtrip used.",
+      "testFile": "tests/docs-v2-comparable.test.js",
+      "testName": "[D2-24] comparable standard OOXML footnote import retains editable source text and reference",
+      "officialSource": "https://support.google.com/docs/answer/86629?hl=en",
+      "currentEvidence": {
+        "method": "Identical executable fixtures; inspect real generated ZIP/native XML or returned HTML; current module imports from project root.",
+        "result": "PASS",
+        "log": "evidence/benchmark-v2/docs-current-comparable.log"
+      },
+      "baselineCaseEvidence": {
+        "method": "Same test file and expected values, DOCS_BENCHMARK_ROOT points to immutable extracted0.1 source. Assertions executed and failed on actual outputs.",
+        "result": "FAIL",
+        "log": "evidence/benchmark-v2/docs-baseline-comparable.log",
+        "subject": "evidence/benchmark-v2/baseline/extracted/commonplace",
+        "limit": "Five bounded representation/import behaviors only. No claim of broad Microsoft Office fidelity or original Google runtime equivalence."
+      }
+    }
+  ],
+  "remainingGaps": [
+    "Nested document tabs and tab duplication; Google tab nesting up to3 levels is not implemented.",
+    "Formatting suggestions, comments attached to suggestions, preview accepted/rejected state and Office tracked-change metadata interchange are not implemented. Formatting applies directly; exported pending suggestions are visible text without review metadata.",
+    "Onscreen pagination inserts gaps between top-level blocks; oversized single paragraphs/tables are not split with line-level fidelity, and footnotes appear at end of tab rather than each page. Native print pagination handles internal lines independently.",
+    "Citation manager/bibliography, rendered equation editor, editable smart/dropdown chips, drawings, bookmarks/cross-references, multicolumn section layouts and line numbers are not implemented.",
+    "DOCX supports a bounded local OOXML vocabulary; complex sections, advanced tables, unsupported objects, linked media, endnotes and review metadata may be simplified or omitted with import warnings.",
+    "Markdown implements tested portable constructs; page layout, fonts, image wrapping and review metadata are not portable. Raw HTML is escaped.",
+    "Voice typing, translation, AI writing, add-ons and account-backed integrations remain outside the local credential-free implementation.",
+    "Independent browser validation is required for native text input, selection, resizing, printing, pagination and saves. Semantic tests alone are not acceptance."
+  ],
+  "benchmarkHarnessLimit": "Comparable XML tests apply the same Happy DOM21 wildcard-namespace compatibility lookup to both target subjects; sources remain unchanged. UI/native file chooser remains separately blocked/unverified. Exported OOXML is inspected directly and import fixture is manually authored, not only self-roundtripped."
+}

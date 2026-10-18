@@ -1,0 +1,27 @@
+{
+  "app": "Docs",
+  "scope": "20 local additions absent from inspected current source; existing footnotes, TOC, line spacing, image sizing/wrapping, Markdown and ordinary tabs excluded.",
+  "absenceEvidence": ["docsModel.js changeDocumentTab only has add/select/rename/delete/move", "DocsEditor.jsx image toolbar only has width/wrapping/delete", "docsExtensions.js has no citation/bookmark/equation/column nodes", "DocsEditor.jsx menus/findMatches lack remaining commands"],
+  "features": [
+    {"id":"D4-01","rank":1,"name":"Duplicate tabs","impact":5,"effort":1,"acceptance":"Copy body/page settings to a fresh id; later edits independent."},
+    {"id":"D4-02","rank":2,"name":"Nested tabs","impact":4,"effort":2,"acceptance":"Indent/outdent through three levels; preserve subtrees and promote children on delete."},
+    {"id":"D4-03","rank":3,"name":"Crop images","impact":5,"effort":2,"acceptance":"Apply user crop bounds to actual pixels so reload/export retain crop."},
+    {"id":"D4-04","rank":4,"name":"Rotate images","impact":4,"effort":1,"acceptance":"Rotate pixels 90 degrees and persist new image/dimensions."},
+    {"id":"D4-05","rank":5,"name":"Replace images","impact":5,"effort":1,"acceptance":"Replace source while retaining display width and wrapping."},
+    {"id":"D4-06","rank":6,"name":"Citation library","impact":4,"effort":2,"acceptance":"Add/edit/remove local source metadata and insert citations; edits refresh references."},
+    {"id":"D4-07","rank":7,"name":"Automatic bibliography","impact":4,"effort":2,"acceptance":"Bibliography refreshes cited sources and supports APA/MLA/Chicago display."},
+    {"id":"D4-08","rank":8,"name":"Bookmarks and internal links","impact":4,"effort":2,"acceptance":"Name position, link/navigate to it, remove marker separately."},
+    {"id":"D4-09","rank":9,"name":"Format painter","impact":5,"effort":2,"acceptance":"Capture marks/paragraph formatting and apply to another selection without changing words."},
+    {"id":"D4-10","rank":10,"name":"Rendered equations","impact":4,"effort":3,"acceptance":"Editable bounded fractions/roots/powers/subscripts/Greek render as MathML; unsupported syntax errors."},
+    {"id":"D4-11","rank":11,"name":"Column sections","impact":4,"effort":2,"acceptance":"Wrap selected blocks in 2/3 columns; unwrap without losing contents."},
+    {"id":"D4-12","rank":12,"name":"Change text case","impact":4,"effort":1,"acceptance":"Upper/lower/title/sentence case only selected text, preserving marks."},
+    {"id":"D4-13","rank":13,"name":"Search all tabs","impact":5,"effort":2,"acceptance":"Results navigate to exact text in correct tab."},
+    {"id":"D4-14","rank":14,"name":"Whole-word search","impact":4,"effort":1,"acceptance":"Exclude partial words while retaining case setting."},
+    {"id":"D4-15","rank":15,"name":"Regex find/replace","impact":4,"effort":2,"acceptance":"Validate patterns, ignore zero-length matches safely, support numbered replacement groups."},
+    {"id":"D4-16","rank":16,"name":"Paragraph borders/shading","impact":4,"effort":1,"acceptance":"Apply/clear border and background across selected paragraphs; HTML reload retains."},
+    {"id":"D4-17","rank":17,"name":"Paragraph spacing","impact":4,"effort":1,"acceptance":"Independent before/after spacing persists through reload/export."},
+    {"id":"D4-18","rank":18,"name":"RTL paragraphs","impact":5,"effort":1,"acceptance":"Apply LTR/RTL independently of paragraph alignment."},
+    {"id":"D4-19","rank":19,"name":"Special characters","impact":3,"effort":1,"acceptance":"Insert chosen symbol at saved editor selection."},
+    {"id":"D4-20","rank":20,"name":"Sort paragraphs","impact":3,"effort":2,"acceptance":"Sort complete selected paragraphs both directions, preserving marks; reject mixed structures."}
+  ]
+}
